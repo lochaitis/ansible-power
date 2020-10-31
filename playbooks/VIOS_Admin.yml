@@ -1,7 +1,7 @@
 - name: basic
   hosts: all
   collections: ibm.power_aix
-  gather_facts: no
+  gather_facts: yes
   #become: true
   become_user: padmin
   tasks:
