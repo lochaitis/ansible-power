@@ -6,4 +6,4 @@
   #become_user: costa_l
   tasks:
 - name: Perform a health check on dual VIOSes 
-  power_aix_vioshc: targets=172.30.30.115 action=health_check
+  nim_vios_hc: targets=172.30.30.115 action=health_check
