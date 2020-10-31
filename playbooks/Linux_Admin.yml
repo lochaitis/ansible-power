@@ -1,0 +1,40 @@
+---
+
+## This is my first playbook
+  - name:  Admin tasks 
+    hosts: all 
+    gather_facts: False
+    user:  costa_l
+    become:  true
+    become_method:  sudo
+    become_user:  root
+    tasks:
+     #- name: Set authorized key for user costa_l copying it from current user
+     #  authorized_key: user=costa_l state=present key="{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
+
+     #- name: Add the user 'costa_l' with a specific uid and a primary group of 'root'
+     #  user: name=costa_l comment=Costal uid=1040 group=root home=/home/costa_l
+       
+     - name: Configure DNS settings
+       replace:  path=/etc/resolv.conf regexp='^(.+)$' replace='nameserver 172.30.12.50'  
+
+     - name: Register as user and auto-subscribe to available content.
+       redhat_subscription: state=present username=IBMCosta password=Sess2ons90! auto_attach=true force_register=no
+     
+     - name: upgrade all packages
+       yum: name='*' state=latest
+
+     - name: enable ssh 
+       service: name=sshd enabled=true
+
+     - name: enable firewall 
+       service: name=firewalld enabled=true
+
+     - name: Install Linux on Power packages
+       yum:  name=ibm-power-managed-rhel7 state=latest	
+
+     - name: Install cloud-init 
+       yum:  name=cloud-init state=latest
+
+     - name: Install NMON
+       yum:  name=nmon state=latest
