@@ -1,3 +1,3 @@
 # ansible-power
 
-This repository will be used to maintain Ansible Playbooks for AIX that will be used in our local lab.
+This is a collection of AIX & Linux playbooks for IBM Power Systems that the local IBM Technical team uses to maintain our Power Systems environment in the Client Center. 
