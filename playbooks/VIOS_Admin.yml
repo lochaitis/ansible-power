@@ -2,7 +2,7 @@
   hosts: all
   collections: ibm.power_aix
   gather_facts: no
-  become: true
+  #become: true
   become_user: padmin
   tasks:
 - name: Perform a health check on dual VIOSes 
