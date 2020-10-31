@@ -98,7 +98,6 @@
      add_host: name='{{ item }}' groups=AIX_hosts
      loop: "{{ ansible_play_hosts }}"
      
-   - name: remove the motd banner
-     net_banner: banner=motd state=absent
+ 
      
   
