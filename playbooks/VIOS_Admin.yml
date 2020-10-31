@@ -1,6 +1,6 @@
 - name: basic
   hosts: 172.30.30.115
-  collections: ibm.power_aix
+  #collections: ibm.power_aix
   gather_facts: yes
   #become: true
   #become_user: costa_l
