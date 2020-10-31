@@ -98,11 +98,4 @@
      add_host: name='{{ item }}' groups=AIX_hosts
      loop: "{{ ansible_play_hosts }}"
      
-   - name: configure the login banner
-     net_banner:
-       banner: login
-       text: |
-         this is my login banner
-         that contains a multiline
-         string
-       state: present
+  
