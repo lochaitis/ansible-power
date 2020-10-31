@@ -3,7 +3,7 @@
   collections: ibm.power_aix
   gather_facts: yes
   #become: true
-  #become_user: costa_l
+  become_user: costa_l
   tasks:
 - name: Perform a health check on dual VIOSes 
   nim_vios_hc: targets=FWVios1 action=health_check
