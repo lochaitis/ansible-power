@@ -98,6 +98,10 @@
      add_host: name='{{ item }}' groups=AIX_hosts
      loop: "{{ ansible_play_hosts }}"
      
+   - name: Perform an alternate disk copy of the rootvg to the smallest disk that can be selected
+     alt_disk:
+       disk_size_policy: minimize
+     
  
      
   
