@@ -5,4 +5,4 @@
   become_user: padmin
   tasks:
 - name: Perform a health check on dual VIOSes 
-  nim_vios_hc: targets=p980vios1,0Avios1,EWvios1,FWVios1,1Vvios1 action=health_check
+  ibm.power_aix.nim_vios_hc: targets=p980vios1,0Avios1,EWvios1,FWVios1,1Vvios1 action=health_check
