@@ -2,8 +2,8 @@
   hosts: 172.30.30.115
   collections: ibm.power_aix
   #gather_facts: no
-  become: true
+  #become: true
   #become_user: costa_l
-  #tasks:
-#- name: Perform a health check on dual VIOSes 
-#  nim_vios_hc: targets=FWVios1 action=health_check
+  tasks:
+- name: Perform a health check on dual VIOSes 
+  nim_vios_hc: targets=FWVios1 action=health_check
