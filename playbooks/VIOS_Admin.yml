@@ -1,5 +1,5 @@
 - name: basic
-  hosts: all
+  hosts: 172.30.30.115
   collections: ibm.power_aix
   gather_facts: yes
   #become: true
