@@ -8,7 +8,6 @@
     action: alt_disk_copy
     disk_size_policy: minimize
     targets:
-    - nimvios01: []
-      nimvios02: []
-    - nimvios03: []
+    - 172.30.30.115: []
+    
     
