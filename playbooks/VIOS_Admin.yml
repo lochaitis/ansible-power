@@ -7,7 +7,6 @@
   tasks:
     action: alt_disk_copy
     disk_size_policy: minimize
-    targets:
-    - 172.30.30.115: []
+    targets: 172.30.30.115
     
     
