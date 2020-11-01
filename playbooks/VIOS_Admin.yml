@@ -1,9 +1,13 @@
-
-- name: Perform an alternate disk copy of the rootvg to the smallest disk that can be selected
   hosts: 172.30.30.115
   gather_facts: no
   collections:
   - ibm.power_aix
+
+
+
+
+- name: Perform an alternate disk copy of the rootvg to the smallest disk that can be selected
+
   tasks:
     action: alt_disk_copy
     disk_size_policy: minimize
