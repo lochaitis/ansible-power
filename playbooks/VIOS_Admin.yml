@@ -1,6 +1,6 @@
 - name: VIOS  
   hosts: 172.30.30.115
-  gather_facts: yes
+  gather_facts: no
   collections:
   - ibm.power_aix
   tasks:
