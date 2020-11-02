@@ -1,5 +1,5 @@
 - name: VIOS  
-  hosts: 172.30.30.115
+  hosts: 172.30.30.150
   gather_facts: no
   collections:
   - ibm.power_aix
