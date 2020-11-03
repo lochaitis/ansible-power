@@ -1,5 +1,5 @@
 - name:  basic
-  hosts: 172.30.30.87, 172.30.30.70
+  hosts: all
   gather_facts: no
   become: true
   become_user: root
