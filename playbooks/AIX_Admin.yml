@@ -1,5 +1,5 @@
 - name:  basic
-  hosts: 172.30.30.87
+  hosts: 172.30.30.87, 172.30.30.70
   gather_facts: no
   become: true
   become_user: root
@@ -104,8 +104,7 @@
    - name: Perform an alternate disk copy of the rootvg to the smallest disk that can be selected
      alt_disk: disk_size_policy=minimize
 
-   - name: Check, download and install to TL 7.2.3
-     suma: action=download oslevel='7200-04-00'
+  
      
  
      
