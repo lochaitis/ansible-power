@@ -1,6 +1,6 @@
-- name:  basic
+- name:  AIX Update
   hosts: 172.30.30.87
-  gather_facts: no
+  gather_facts: yes
   become: true
   become_user: root
   tasks:
