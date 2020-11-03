@@ -1,5 +1,5 @@
 - name:  AIX Update
-  hosts: 172.30.30.87
+  hosts: 172.30.30.70
   gather_facts: yes
   become: true
   become_user: root
