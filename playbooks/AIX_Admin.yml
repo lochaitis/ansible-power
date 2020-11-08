@@ -98,11 +98,11 @@
      add_host: name='{{ item }}' groups=AIX_hosts
      loop: "{{ ansible_play_hosts }}"
      
-   - name: Perform a cleanup of any existing alternate disk copy
-     alt_disk: action=clean
+   #- name: Perform a cleanup of any existing alternate disk copy
+   #  alt_disk: action=clean
      
-   - name: Perform an alternate disk copy of the rootvg to the smallest disk that can be selected
-     alt_disk: disk_size_policy=minimize
+   #- name: Perform an alternate disk copy of the rootvg to the smallest disk that can be selected
+   #  alt_disk: disk_size_policy=minimize
 
   
      
