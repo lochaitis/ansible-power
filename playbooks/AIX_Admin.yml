@@ -8,6 +8,7 @@
      group: name=admin state=present
      
    - name: Create user costa_l
+     ibm.power_aix.user:
      user: name=costa_l comment="Costa Lochaitis" group=admin shell=/usr/bin/ksh generate_ssh_key=yes state=present
      
    - name: Remove file (delete file)
