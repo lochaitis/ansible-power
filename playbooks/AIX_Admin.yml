@@ -24,21 +24,6 @@
    - name: Change file ownership and group
      file: path=/home/costa_l/.profile owner=costa_l group=admin
      
-   - name: Create user devops
-     user: name=devops comment="Ansible user" group=admin shell=/usr/bin/ksh generate_ssh_key=yes state=present password='passw0rd'
-     
-   - name: Remove file (delete file)
-     file: path=/home/devops/.profile state=absent
-     
-   - name: create profile file if it doesnt exist
-     file: path=/home/devops/.profile state=touch
-     
-   - name: Configure users profile
-     lineinfile: path=/home/devops/.profile line='PS1="$(whoami)@$(hostname)(\$PWD)# "\nexport PS1\nexport EDITOR=/usr/bin/vi\nset -o vi' create=yes 
-     
-   - name: Change file ownership and group
-     file: path=/home/devops/.profile owner=devops group=admin
-     
    - name: Create user ravi
      user: name=ravi comment="Ravi Mandla" group=admin shell=/usr/bin/ksh generate_ssh_key=yes state=present uid=2000
   
