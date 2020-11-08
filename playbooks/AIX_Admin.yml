@@ -8,7 +8,7 @@
      group: name=admin state=present
      
    - name: Create user costa_l
-     user: name=costa_l comment="Costa Lochaitis" group=admin shell=/usr/bin/ksh generate_ssh_key=yes state=present password=passw0rd
+     user: name=costa_l comment="Costa Lochaitis" group=admin shell=/usr/bin/ksh generate_ssh_key=yes state=present password=passw0rd change_passwd_on_login=true
      
    - name: Remove file (delete file)
      file: path=/home/costa_l/.profile state=absent
