@@ -3,7 +3,8 @@
   gather_facts: no
   become: true
   become_user: root
-  #collections: ibm.power_aix
+  collections:
+  - ibm.power_aix
   tasks:
    - name: Ensure group admin exists
      group: name=admin state=present
