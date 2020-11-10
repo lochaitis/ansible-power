@@ -1,6 +1,7 @@
 - name:  basic
   hosts: all
   gather_facts: no
+  remote_user: devops
   become: true
   become_user: root
   collections:
