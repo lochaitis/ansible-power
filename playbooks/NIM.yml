@@ -4,24 +4,9 @@
   become: true
   become_user: root
   remote_user: devops
-  vars:
-    download_dir: /suma
-    download_only: False
   
-  - name: Create file system for system updates
-    aix_filesystem:
-      filesystem: "{{ download_dir }}"
-      size: 50G
-      state: present
-      vg: nimvg
-
-  - name: Mount the file system (if necessary)
-    aix_filesystem:
-      filesystem: "{{ download_dir }}"
-      state: mounted 
-
-  - name: Check, download and install system updates for the current oslevel of the system
-    suma:
-      action: download
-      oslevel: Latest
-      download_dir: "{{ download_dir }}"
+- name: Check, download and install system updates for the current oslevel of the system
+  suma:
+    action: download
+    oslevel: Latest
+    download_dir: /suma
