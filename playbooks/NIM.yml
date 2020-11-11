@@ -25,6 +25,8 @@
     suma:
       action: download
       oslevel: '7200-03'
+      download_dir: "/suma/7200-03"
+      download_only: yes
       
   #- name: Check, download and install system updates for the current oslevel of the system
   #  suma:
