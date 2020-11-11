@@ -15,4 +15,9 @@
       size: 50G
       state: present
       vg: nimvg
+      
+  - name: Mount the file system (if necessary)
+    aix_filesystem:
+      filesystem: "{{ download_dir }}"
+      state: mounted
    
