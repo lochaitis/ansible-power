@@ -4,6 +4,8 @@
   become: true
   become_user: root
   remote_user: devops
+  collections:
+     - ibm.power_aix
   vars:
     download_dir: /suma
     download_only: False
