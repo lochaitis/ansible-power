@@ -25,7 +25,7 @@
     suma:
       action: download
       oslevel: Latest
-      download_dir: /suma
+      #download_dir: /suma
       
   #- name: Check and download required to update to SP 7.2.3.5
   #  suma:
