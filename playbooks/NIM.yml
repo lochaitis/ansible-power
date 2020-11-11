@@ -4,9 +4,21 @@
   become: true
   become_user: root
   remote_user: devops
-  
-- name: Check, download and install system updates for the current oslevel of the system
-  suma:
-    action: download
-    oslevel: Latest
+  vars:
     download_dir: /suma
+    download_only: False
+    
+tasks:
+- name: Create file system for system updates
+    aix_filesystem:
+      filesystem: "{{ download_dir }}"
+      size: 1G
+      state: present
+      vg: rootvg
+    when: ansible_distribution == 'AIX'
+    
+- name: Check oslevel of system
+    shell: "oslevel -s"
+    when: ansible_distribution == 'AIX'
+    register: output
+- debug: var=output
