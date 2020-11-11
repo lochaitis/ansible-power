@@ -21,6 +21,11 @@
       filesystem: "{{ download_dir }}"
       state: mounted
       
+  - name: Check, download and install to TL 7.2.3
+    suma:
+      action: download
+      oslevel: '7200-03'
+      
   #- name: Check, download and install system updates for the current oslevel of the system
   #  suma:
   #    action: download
