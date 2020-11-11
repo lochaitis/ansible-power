@@ -21,12 +21,13 @@
       filesystem: "{{ download_dir }}"
       state: mounted
       
-  - name: Check, download and install to TL 7.2.3
+  - name: Check and download required to update to SP 7.2.3.4
     suma:
       action: download
-      oslevel: '7200-03'
-      download_dir: "/suma/7200-03"
+      oslevel: '7200-03-04'
       download_only: yes
+      download_dir: /suma/dl_updt_7200-03-02
+    when: ansible_distribution == 'AIX'
       
   #- name: Check, download and install system updates for the current oslevel of the system
   #  suma:
