@@ -20,4 +20,12 @@
     aix_filesystem:
       filesystem: "{{ download_dir }}"
       state: mounted
+      
+  - name: Check and download required to update to SP 7.2.3.5
+    suma:
+      action: download
+      oslevel: '7200-03-05'
+      download_only: yes
+      download_dir: /suma/dl_updt_7200-03-02
+    when: ansible_distribution == 'AIX'
    
