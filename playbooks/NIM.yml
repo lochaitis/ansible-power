@@ -30,7 +30,7 @@
     when: ansible_distribution == 'AIX'
 
   - name: Check for, and install, system updates
-    suma:
+    aix_suma:
       oslevel: 'latest'
       download_dir: "{{ download_dir }}"
       download_only: "{{ download_only }}"
@@ -38,11 +38,11 @@
     register: output
   - debug: var=output
 
-  - name: Check for new oslevel
-    shell: "oslevel -s"
-    when: ansible_distribution == 'AIX'
-    register: output
-  - debug: var=output
+  #- name: Check for new oslevel
+  #  shell: "oslevel -s"
+  #  when: ansible_distribution == 'AIX'
+  #  register: output
+  # - debug: var=output
 
 # - name: Restart with newest kernel
 #   shell: "sleep 5 && shutdown -Fr"
