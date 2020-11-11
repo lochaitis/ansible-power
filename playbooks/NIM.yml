@@ -1,18 +1,14 @@
-- name:  AIX Update
+- name:  "SUMA on AIX"
   hosts: all
   gather_facts: yes
   become: true
   become_user: root
   remote_user: devops
-  ---
-- name: "SUMA on AIX"
-  hosts: all
-  gather_facts: yes
   vars:
     download_dir: /suma
     download_only: False
+  
   tasks:
-
   - name: Check oslevel of system
     shell: "oslevel -s"
     when: ansible_distribution == 'AIX'
