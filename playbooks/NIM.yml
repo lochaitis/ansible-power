@@ -26,7 +26,7 @@
       action: download
       oslevel: '7200-03-04'
       download_only: yes
-      download_dir: /suma/dl_updt_7200-03-02
+      download_dir: /suma/
     when: ansible_distribution == 'AIX'
       
   #- name: Check, download and install system updates for the current oslevel of the system
