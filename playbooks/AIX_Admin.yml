@@ -10,6 +10,18 @@
    - name: Ensure group admin exists
      group: name=admin state=present
      
+   - name: Remove file (delete file)
+     file: path=/.profile state=absent
+     
+   - name: create profile file if it doesnt exist
+     file: path=/.profile state=touch
+     
+   - name: Configure users profile
+     lineinfile: path=/.profile line='PS1="$(whoami)@$(hostname)(\$PWD)# "\nexport PS1\nexport EDITOR=/usr/bin/vi\nset -o vi' create=yes 
+     
+   - name: Change file ownership and group
+     file: path=/.profile owner=root group=system
+     
    - name: Create user devops
      user: name=devops comment="Ansible" group=admin shell=/usr/bin/ksh generate_ssh_key=yes state=present 
      
