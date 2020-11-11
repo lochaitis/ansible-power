@@ -24,7 +24,7 @@
   - name: Check, download and install system updates for the current oslevel of the system
     suma:
       action: download
-      oslevel: Latest
+      #oslevel: Latest
       #download_dir: /suma
       
   #- name: Check and download required to update to SP 7.2.3.5
