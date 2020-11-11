@@ -7,18 +7,10 @@
   vars:
     download_dir: /suma
     download_only: False
-    
-tasks:
-- name: Create file system for system updates
-    aix_filesystem:
-      filesystem: "{{ download_dir }}"
-      size: 1G
-      state: present
-      vg: rootvg
-    when: ansible_distribution == 'AIX'
-    
-- name: Check oslevel of system
+  tasks:
+  
+  - name: Check oslevel of system
     shell: "oslevel -s"
     when: ansible_distribution == 'AIX'
     register: output
-- debug: var=output
+  - debug: var=output
