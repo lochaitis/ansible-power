@@ -1,6 +1,6 @@
 - name:  "SUMA on AIX"
   hosts: all
-  gather_facts: no
+  #gather_facts: no
   become: true
   become_user: root
   remote_user: devops
