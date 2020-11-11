@@ -9,8 +9,10 @@
     download_only: False
   tasks:
   
-  - name: Check oslevel of system
-    shell: "oslevel -s"
-    when: ansible_distribution == 'AIX'
-    register: output
-  - debug: var=output
+  - name: Create file system for system updates
+    aix_filesystem:
+      filesystem: "{{ download_dir }}"
+      size: 50G
+      state: present
+      vg: nimvg
+   
