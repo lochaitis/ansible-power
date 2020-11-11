@@ -4,6 +4,70 @@
   become: true
   become_user: root
   remote_user: devops
+  ---
+- name: "SUMA on AIX"
+  hosts: all
+  gather_facts: yes
+  vars:
+    download_dir: /suma
+    download_only: False
   tasks:
-   - name: Check, download and install to TL 7.2.3
-     suma: action=download oslevel='7200-04-00'
+
+  - name: Check oslevel of system
+    shell: "oslevel -s"
+    when: ansible_distribution == 'AIX'
+    register: output
+  - debug: var=output
+
+  #- name: Create file system for system updates
+  #  aix_filesystem:
+  #    filesystem: "{{ download_dir }}"
+  #    size: 1G
+  #    state: present
+  #    vg: rootvg
+  #  when: ansible_distribution == 'AIX'
+
+  #- name: Mount the file system (if necessary)
+  #  aix_filesystem:
+  #    filesystem: "{{ download_dir }}"
+  #    state: mounted
+  #  when: ansible_distribution == 'AIX'
+
+  #- name: Check for, and install, system updates
+  #  ibm.power_aix.suma:
+  #    oslevel: 'latest'
+  #    download_dir: "{{ download_dir }}"
+  #    download_only: "{{ download_only }}"
+  #  when: ansible_distribution == 'AIX'
+  #  register: output
+  #- debug: var=output
+
+  #- name: Check for new oslevel
+  #  shell: "oslevel -s"
+  #  when: ansible_distribution == 'AIX'
+  #  register: output
+  #- debug: var=output
+
+# - name: Restart with newest kernel
+#   shell: "sleep 5 && shutdown -Fr"
+#   async: 1
+#   poll: 0
+#   register: output
+# - debug: var=output
+
+# - name: Restart with newest kernel
+#   reboot:
+#   when: ansible_distribution == 'AIX'
+#   register: output
+# - debug: var=output
+
+#  - name: Wait for 10 seconds
+#    pause:
+#      seconds: 10
+#
+#  - name: Wait for the system to reboot
+#    wait_for_connection:
+#      connect_timeout: 20
+#      sleep: 5
+#      delay: 5
+#      timeout: 600
