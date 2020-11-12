@@ -15,7 +15,7 @@
      aix_filesystem: filesystem="{{ download_dir }}" state=mounted 
     
    - name: Check, download and install system updates for the current oslevel of the system
-     ibm.power_aix.suma: action=download oslevel=Latest download_dir=/suma
+     ibm.power_aix.suma: action=download oslevel=Latest download_dir=/suma when=ansible_distribution == 'AIX'
       
   #- name: Check and download required to update to SP 7.2.3.5
   #  suma:
