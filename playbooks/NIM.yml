@@ -10,18 +10,13 @@
   tasks:
   
   - name: Create file system for system updates
-    aix_filesystem:
-      filesystem: "{{ download_dir }}"
-      size: 50G
-      state: present
-      vg: nimvg
-    when: ansible_distribution == 'AIX'
+    aix_filesystem: filesystem="{{ download_dir }}" size=50G state=present vg=nimvg when=ansible_distribution == 'AIX'
       
-  - name: Mount the file system (if necessary)
-    aix_filesystem:
-      filesystem: "{{ download_dir }}"
-      state: mounted
-    when: ansible_distribution == 'AIX'
+ # - name: Mount the file system (if necessary)
+ #   aix_filesystem:
+ #     filesystem: "{{ download_dir }}"
+ #     state: mounted
+ #   when: ansible_distribution == 'AIX'
     
   #- name: Check, download and install system updates for the current oslevel of the system
   #  suma:
@@ -29,13 +24,13 @@
   #    oslevel: Latest
   #    download_dir: /suma
       
-  - name: Check and download required to update to SP 7.2.3.5
-    suma:
-      action: download
-      oslevel: '7200-03-05'
-      download_only: no
-      download_dir: /suma
-    when: ansible_distribution == 'AIX'
+  #- name: Check and download required to update to SP 7.2.3.5
+  #  suma:
+  #    action: download
+  #    oslevel: '7200-03-05'
+  #    download_only: no
+  #    download_dir: /suma
+  #  when: ansible_distribution == 'AIX'
     
       
   #- name: Check, download and install system updates for the current oslevel of the system
