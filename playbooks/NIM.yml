@@ -20,14 +20,11 @@
      register: output
    - debug: var=output
    
-   - name: Check for, and install, system updates
-     ibm.power_aix.suma:
-      oslevel: 'latest'
-      download_dir: "{{ download_dir }}"
-      download_only: "{{ download_only }}"
-     when: ansible_distribution == 'AIX'
-     register: output
-   - debug: var=output
+   - name: Check, download and install system updates for the current oslevel of the system
+     suma:
+       action: download
+       oslevel: Latest
+       download_dir: /suma
       
   #- name: Check and download required to update to SP 7.2.3.5
   #  suma:
