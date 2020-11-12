@@ -21,7 +21,7 @@
    - debug: var=output
    
    - name: Check, download and install system updates for the current oslevel of the system
-     suma: action=preview oslevel=Latest download_dir=/suma
+     suma: action=download oslevel=7200-03-04 download_dir=/suma
       
   #- name: Check and download required to update to SP 7.2.3.5
   #  suma:
