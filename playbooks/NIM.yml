@@ -14,11 +14,8 @@
    - name: Mount the file system (if necessary)
      aix_filesystem: filesystem="{{ download_dir }}" state=mounted 
     
-  #- name: Check, download and install system updates for the current oslevel of the system
-  #  suma:
-  #    action: download
-  #    oslevel: Latest
-  #    download_dir: /suma
+   - name: Check, download and install system updates for the current oslevel of the system
+     suma: action=download oslevel=Latest download_dir=/suma
       
   #- name: Check and download required to update to SP 7.2.3.5
   #  suma:
