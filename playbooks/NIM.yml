@@ -15,7 +15,7 @@
      aix_filesystem: filesystem="{{ download_dir }}" state=mounted 
     
    - name: Check oslevel of system
-     shell: "oslevel -s" when=ansible_distribution == 'AIX' register=output
+     shell="oslevel -s" when=ansible_distribution == 'AIX' register=output
    - debug: var=output
       
   #- name: Check and download required to update to SP 7.2.3.5
