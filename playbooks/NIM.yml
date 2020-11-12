@@ -33,7 +33,7 @@
     suma:
       action: download
       oslevel: '7200-03-05'
-      download_only: yes
+      download_only: no
       download_dir: /suma
     when: ansible_distribution == 'AIX'
     
