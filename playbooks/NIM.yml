@@ -20,12 +20,12 @@
      register: output
    - debug: var=output
    
-   - name: Check and download required to update to SP 7.2.3.2
+   - name: Check and download required to update to SP 7.2.4.0
      suma:
        action: download
-       oslevel: Latest
+       oslevel: 7200-04-00-1937
        download_only: yes
-       download_dir: /tmp/dl_updt_7200-03-05-2016
+       download_dir: /tmp/dl_updt_7200-04-00-1937 
      when: ansible_distribution == 'AIX'
    
    #- name: Check, download and install system updates for the current oslevel of the system
