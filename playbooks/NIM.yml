@@ -20,12 +20,14 @@
      register: output
    - debug: var=output
    
-   - name: Check and download required to update to SP 7.2.4.0
+   - name: Check, download and install to latest SP of TL 7.2.3
      suma:
        action: download
-       oslevel: "7200-03-03-1913"
-       download_only: yes
-       download_dir: /tmp/dl_updt_7200-04-00-1937 
+       oslevel: '7200-03-03'
+       latest_sp: yes
+       extend_fs: yes
+       #download_only: yes
+       download_dir: /suma/7200-03-03 
      when: ansible_distribution == 'AIX'
    
    #- name: Check, download and install system updates for the current oslevel of the system
