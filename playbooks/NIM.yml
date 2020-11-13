@@ -1,11 +1,10 @@
 - name:  "SUMA on AIX"
   hosts: all
-  #gather_facts: no
+  gather_facts: no
   become: true
   become_user: root
   remote_user: devops
   collections: ibm.power_aix.suma
-  collections_paths: /home/devops/.ansible/collections/ansible_collections/ibm/power_aix/plugins/modules/suma.py
   
   tasks:
    - name: Create file system for system updates
