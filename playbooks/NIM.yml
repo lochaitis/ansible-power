@@ -24,7 +24,7 @@
      suma:
        action: download
        oslevel: '7200-03-03'
-       latest_sp: yes
+       last_sp: yes
        extend_fs: yes
        #download_only: yes
        download_dir: /suma/7200-03-03 
