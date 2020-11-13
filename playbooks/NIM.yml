@@ -23,7 +23,7 @@
    - name: Check and download required to update to SP 7.2.3.2
      suma:
        action: download
-       oslevel: '7200-03-05-2016'
+       oslevel: Latest
        download_only: yes
        download_dir: /tmp/dl_updt_7200-03-05-2016
      when: ansible_distribution == 'AIX'
