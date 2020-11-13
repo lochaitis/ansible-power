@@ -13,9 +13,7 @@
      aix_filesystem: filesystem="/suma" state=mounted 
     
    - name: Check oslevel of system
-     shell: "oslevel -s"
-     when: ansible_distribution == 'AIX'
-     register: output
-   - debug: var=output
+     shell: "oslevel -s" when=ansible_distribution == 'AIX' register=output
+  
    
    
