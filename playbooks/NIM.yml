@@ -4,9 +4,7 @@
   become: true
   become_user: root
   remote_user: devops
-  vars:
-    download_dir: /suma
-    download_only: False
+  
   tasks:
    - name: Create file system for system updates
      aix_filesystem: filesystem="{{ download_dir }}" size=50G state=present vg=nimvg
@@ -20,39 +18,4 @@
      register: output
    - debug: var=output
    
-   - name: Check, download and install to latest SP of TL 7.2.3
-     suma:
-       action: download
-       oslevel: '7200-03-03'
-       last_sp: yes
-       extend_fs: no
-       #download_only: yes
-       #download_dir: /suma/7200-03-03 
-     #when: ansible_distribution == 'AIX'
-   
-   #- name: Check, download and install system updates for the current oslevel of the system
-   #  suma: action=download oslevel=7200-03-04 download_dir=/suma
-      
-  #- name: Check and download required to update to SP 7.2.3.5
-  #  suma:
-  #    action: download
-  #    oslevel: '7200-03-05'
-  #    download_only: no
-  #    download_dir: /suma
-  #  when: ansible_distribution == 'AIX'
-    
-      
-  #- name: Check, download and install system updates for the current oslevel of the system
-  #  suma:
-  #    action: download
-      #oslevel: Latest
-      #download_dir: /suma
-      
-  #- name: Check and download required to update to SP 7.2.3.5
-  #  suma:
-  #    action: download
-  #    oslevel: '7200-03-05'
-  #    download_only: yes
-  #    download_dir: /suma/dl_updt_7200-03-05
-  #  when: ansible_distribution == 'AIX'
    
