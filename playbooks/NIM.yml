@@ -15,11 +15,10 @@
    - name: Check oslevel of system
      shell: cmd="oslevel -s" when="ansible_distribution == 'AIX'" register=output
      
-   - name: Check, download and install system updates for the current oslevel of the system
+   - name: Check, download and install to TL 7.2.3
      suma:
        action: download
-       oslevel: Latest
-       download_dir: /usr/sys/inst.images
+       oslevel: '7200-03'
   
    
    
