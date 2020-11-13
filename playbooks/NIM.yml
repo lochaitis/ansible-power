@@ -28,7 +28,7 @@
        extend_fs: yes
        #download_only: yes
        download_dir: /suma/7200-03-03 
-     when: ansible_distribution == 'AIX'
+     #when: ansible_distribution == 'AIX'
    
    #- name: Check, download and install system updates for the current oslevel of the system
    #  suma: action=download oslevel=7200-03-04 download_dir=/suma
