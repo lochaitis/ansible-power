@@ -7,10 +7,10 @@
   
   tasks:
    - name: Create file system for system updates
-     aix_filesystem: filesystem="{{ download_dir }}" size=50G state=present vg=nimvg
+     aix_filesystem: filesystem="/suma" size=50G state=present vg=nimvg
       
    - name: Mount the file system (if necessary)
-     aix_filesystem: filesystem="{{ download_dir }}" state=mounted 
+     aix_filesystem: filesystem="/suma" state=mounted 
     
    - name: Check oslevel of system
      shell: "oslevel -s"
