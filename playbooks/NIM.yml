@@ -4,8 +4,6 @@
   become: true
   become_user: root
   remote_user: devops
-  collections:
-  - name: ibm.power_aix
   
   tasks:
    - name: Create file system for system updates
@@ -18,7 +16,9 @@
      shell: cmd="oslevel -s" when="ansible_distribution == 'AIX'" register=output
      
    - name: Check, download and install to TL 7.2.3
-     suma: action=preview oslevel=7200-03-05
+     ibm.power_aix.suma
+       action: preview 
+       oslevel: 7200-03-05
   
    
    
