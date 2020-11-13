@@ -18,7 +18,7 @@
      shell: cmd="oslevel -s" when="ansible_distribution == 'AIX'" register=output
      
    - name: Check, download and install system updates for the current oslevel of the system
-     ibm.power_aix.suma: action=download oslevel=Latest download_dir=/suma
+     suma: action=download oslevel=Latest download_dir=/suma
   
    
    
