@@ -27,6 +27,7 @@
        oslevel: '7200-03'
        last_sp: yes
        extend_fs: no
+     when: ansible_distribution == 'AIX'
   
    
    
