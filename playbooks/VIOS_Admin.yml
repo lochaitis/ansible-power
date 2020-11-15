@@ -1,6 +1,7 @@
 - name: VIOS  
   hosts: all
   gather_facts: no
+  user: devops 
 
 tasks:
 - name: Query and install latest updates
