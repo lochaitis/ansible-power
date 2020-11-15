@@ -18,7 +18,8 @@
    - name: Check, download and install to TL 7.2.3
      suma:
        action: download 
-       oslevel: 7200-03-05
+       oslevel: Latest
+       download_dir: /suma
   
    
    
