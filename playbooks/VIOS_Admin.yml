@@ -3,8 +3,9 @@
   gather_facts: no
   user: devops 
   collections:
-  - power_vios
+  - ibm.power_vios
   
   tasks:
    - name: Generate a backup to /home/padmin/backup directory
-     backupios: file=/home/padmin/backup
+     ibm.power_vios:
+         backupios: file=/home/padmin/backup
