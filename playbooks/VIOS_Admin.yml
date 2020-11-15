@@ -4,5 +4,9 @@
   user: devops 
 
   tasks:
-   - name: Query and install latest updates
-     ibm.power_vios.suma: oslevel='latest'
+- name: Creating NFS filesystem from nfshost.
+  aix_filesystem:
+    device: /backup
+    nfs_server: 172.30.30.233
+    filesystem: /backup
+    state: present
