@@ -5,8 +5,4 @@
 
   tasks:
 - name: Creating NFS filesystem from nfshost.
-  aix_filesystem:
-    device: /backup
-    nfs_server: 172.30.30.233
-    filesystem: /backup
-    state: present
+  aix_filesystem: device=/backup nfs_server=172.30.30.233 filesystem=/backup state=present
