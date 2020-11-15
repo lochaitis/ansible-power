@@ -1,5 +1,5 @@
 - name: VIOS  
-  hosts: 172.30.30.150
+  hosts: all
   gather_facts: no
   collections:
   - ibm.power_aix
@@ -9,4 +9,4 @@
        action: alt_disk_copy
        disk_size_policy: minimize
        targets:
-       - 172.30.30.150
+       - 172.30.30.110
