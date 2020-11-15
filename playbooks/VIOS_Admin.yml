@@ -3,7 +3,7 @@
   gather_facts: no
   user: devops 
 
-tasks:
-- name: Query and install latest updates
-  ibm.power_vios.suma:
-      oslevel: 'latest'
+ tasks:
+  - name: Query and install latest updates
+    ibm.power_vios.suma:
+        oslevel: 'latest'
