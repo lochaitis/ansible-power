@@ -16,7 +16,7 @@
      shell: cmd="oslevel -s" when="ansible_distribution == 'AIX'" register=output
      
    - name: Check, download and install to TL 7.2.3
-     ibm.power_aix.suma:
+     suma:
        action: download 
        oslevel: 7200-03-05
   
