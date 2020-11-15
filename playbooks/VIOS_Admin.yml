@@ -5,5 +5,4 @@
   
   tasks:
    - name: Generate a backup to /home/padmin/backup directory
-     ibm.power_vios.backupios:
-         backupios: file=/home/padmin/backup
+     backupios: file=/home/padmin/backup
