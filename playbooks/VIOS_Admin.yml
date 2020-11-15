@@ -2,7 +2,8 @@
   hosts: all
   gather_facts: no
   user: devops 
-
-  tasks:
-- name: Creating NFS filesystem from nfshost.
-  aix_filesystem: device=/backup nfs_server=172.30.30.233 filesystem=/backup state=present
+  
+  tasks
+   - name: Generate a backup to /home/padmin/backup directory
+     backupios:
+       file: /home/padmin/backup
