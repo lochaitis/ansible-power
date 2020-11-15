@@ -5,5 +5,4 @@
 
   tasks:
    - name: Query and install latest updates
-     ibm.power_vios.suma:
-         oslevel: 'latest'
+     ibm.power_vios.suma: oslevel='latest'
