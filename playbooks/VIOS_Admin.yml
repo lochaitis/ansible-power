@@ -2,6 +2,8 @@
   hosts: all
   gather_facts: no
   user: devops 
+  collections:
+  - ibm.power_vios
   
   tasks:
    - name: Generate a backup to /home/padmin/backup directory
