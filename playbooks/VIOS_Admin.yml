@@ -5,7 +5,7 @@
   
   tasks:
    - name: Generate an mksysb backup to /home/padmin/backup.mksysb
-     backupios:
+     ibm.power_vios.backupios:
        file: /home/padmin/backup.mksysb
        mksysb: yes
        savemedialib: no
