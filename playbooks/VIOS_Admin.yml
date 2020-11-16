@@ -1,5 +1,5 @@
 - name: VIOS  
-  hosts: all
+  hosts: VIOS
   gather_facts: no
   user: devops 
   
