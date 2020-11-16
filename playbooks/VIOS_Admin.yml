@@ -4,5 +4,5 @@
   user: devops 
   
   tasks:
-   - name: Generate an mksysb backup to /home/padmin/backup.mksysb
-     backupios: file=/home/padmin/backup.mksysb mksysb=yes savemedialib=no savevgstruct=no
+- name: Generate an mksysb backup to /home/padmin/backup.mksysb
+  backupios: file=/home/padmin/backup.mksysb mksysb=yes savemedialib=no savevgstruct=no
