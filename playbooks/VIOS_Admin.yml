@@ -1,5 +1,5 @@
 - name: VIOS  
-  hosts: 172.30.30.110 
+  hosts: 172.30.30.5
   gather_facts: no
   user: devops 
   
