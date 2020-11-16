@@ -4,5 +4,6 @@
   user: devops 
   
   tasks:
+  
    - name: Generate a backup to /home/padmin/backup directory
      backupios: file=/home/padmin/backup
