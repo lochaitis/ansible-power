@@ -1,11 +1,11 @@
 - name: VIOS  
-  hosts: 172.30.30.110
+  hosts: all
   gather_facts: no
   user: devops 
   
   tasks:
    - name: Generate an mksysb backup to /home/padmin/backup.mksysb
-     ibm.power_vios.backupios:
+     backupios:
        file: /home/padmin/backup.mksysb
        mksysb: yes
        savemedialib: no
