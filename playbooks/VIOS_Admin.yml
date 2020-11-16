@@ -4,5 +4,12 @@
   user: devops 
   
   tasks:
+   - name: Creating NFS filesystem from nfshost.
+     aix_filesystem:
+       device: /home/backup
+       nfs_server: 172.30.30.233
+       filesystem: /home/backup
+       state: present
+ 
    - name: Generate a backup to /home/padmin/backup directory
      backupios: file=/home/padmin/backup
