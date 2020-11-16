@@ -1,9 +1,16 @@
-- name: VIOS  
+---
+- name: "backupios demo"
   hosts: all
   gather_facts: no
-  user: devops 
+
+  user: ansible
+
+  collections:
+  - ibm.power_vios
   tasks:
-   
-  - name: Generate a backup to /home/padmin/backup directory
+
+  - name: Create an mksysb of the system
     backupios:
-      file: /home/padmin/backup
+      file: /home/padmin/backup.mksysb
+      mksysb: yes
+      savemedialib: no
