@@ -14,7 +14,7 @@
       name: "{{ name }}"
       state: "{{ state }}"
       exclude: "{{ exclude }}"
-      use_backend: dnf
+      use_backend: yum
 
     register: output
   - debug: var=output
