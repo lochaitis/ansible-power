@@ -2,6 +2,7 @@
 - name: "YuM Check-Update"
   hosts: all
   gather_facts: yes
+  user: devops
   vars:
     name: '*'
     state: latest
