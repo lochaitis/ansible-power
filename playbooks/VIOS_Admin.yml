@@ -1,7 +1,7 @@
 ---
 - name: "alt disk clone of VIOS"
   hosts: all
-  gather_facts: no
+  gather_facts: yes
   user: devops
   tasks:
     - name: Perform an alternate disk copy of the rootvg to the smallest disk that can be selected
