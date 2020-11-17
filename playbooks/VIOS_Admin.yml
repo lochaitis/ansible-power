@@ -14,6 +14,7 @@
       name: "{{ name }}"
       state: "{{ state }}"
       exclude: "{{ exclude }}"
+      use_backend: yum3
 
     register: output
   - debug: var=output
