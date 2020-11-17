@@ -3,8 +3,7 @@
   hosts: all
   gather_facts: no
   user: devops
-  collections:
-  - ibm.power_vios
+
   tasks:
    - name: Perform an alternate disk copy of the rootvg to the smallest disk that can be selected
      alt_root_vg:
