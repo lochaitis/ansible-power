@@ -6,4 +6,4 @@
 
   tasks:
     - name: Perform an alternate disk copy of the rootvg to the smallest disk that can be selected
-      ibm.power_vios.alt_root_vg: disk_size_policy=minimize
+      alt_root_vg: disk_size_policy=minimize
