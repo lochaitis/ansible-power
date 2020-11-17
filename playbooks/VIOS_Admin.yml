@@ -1,16 +1,12 @@
 ---
-- name: "backupios demo"
+- name: "alt disk clone of VIOS"
   hosts: all
   gather_facts: no
-
   user: devops
-
   collections:
   - ibm.power_vios
   tasks:
 
-  - name: Create an mksysb of the system
-    backupios:
-      file: /home/padmin/backup.mksysb
-      mksysb: yes
-      savemedialib: no
+  - name: Perform an alternate disk copy of the rootvg to the smallest disk that can be selected
+    alt_root_vg:
+      disk_size_policy: minimize
