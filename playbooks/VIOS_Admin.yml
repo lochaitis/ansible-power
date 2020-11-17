@@ -1,8 +1,8 @@
----
 - name: "alt disk clone of VIOS"
   hosts: all
-  gather_facts: yes
+  gather_facts: no
   user: devops
+
   tasks:
     - name: Perform an alternate disk copy of the rootvg to the smallest disk that can be selected
-      alt_root_vg: disk_size_policy=minimize
+      ibm.power_vios.alt_root_vg: disk_size_policy=minimize
