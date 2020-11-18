@@ -1,19 +1,9 @@
 ---
-- name: "YuM Check-Update"
+- name: "alt disk clone of VIOS"
   hosts: all
   gather_facts: no
-  vars:
-    name: '*'
-    state: latest
-    exclude: kernel*
+  user: devops
+
   tasks:
-
-  - name: Upgrade packages, excluding kernel related packages
-    yum:
-      name: "{{ name }}"
-      state: "{{ state }}"
-      exclude: "{{ exclude }}"
-      use_backend: yum
-
-    register: output
-  - debug: var=output
+    - name: Perform an alternate disk copy of the rootvg to the smallest disk that can be selected
+      ibm.power_vios.alt_root_vg: disk_size_policy=minimize
