@@ -1,12 +1,12 @@
 ---
-- name: "alt disk clone of VIOS"
+- name: "VIOS Patch management"
   hosts: all
   gather_facts: no
   user: devops
 
   tasks:
-    - name: Perform a cleanup of any existing alternate disk copy
+    - name: Perform a cleanup of any existing alternate disk copy 
       ibm.power_vios.alt_root_vg: action=clean
 
     - name: Perform an alternate disk copy of the rootvg to the smallest disk that can be selected
-      ibm.power_vios.alt_root_vg: disk_size_policy=nearest
+      ibm.power_vios.alt_root_vg: disk_size_policy=lower 
