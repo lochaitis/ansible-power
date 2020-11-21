@@ -5,8 +5,14 @@
   user: devops
 
   tasks:
-    - name: Perform a cleanup of any existing alternate disk copy 
-      ibm.power_vios.alt_root_vg: action=clean
+     - name: Perform a cleanup of any existing alternate disk copy 
+       ibm.power_vios.alt_root_vg: action=clean
 
-    - name: Perform an alternate disk copy of the rootvg to the smallest disk that can be selected
-      ibm.power_vios.alt_root_vg: disk_size_policy=lower 
+     - name: Perform an alternate disk copy of the rootvg to the smallest disk that can be selected
+       ibm.power_vios.alt_root_vg: disk_size_policy=lower 
+
+     - name: Update the VIOS to level 2.2.6.61, updates are mount on /home/padmin/VIOS
+       updateios: action=update device=/home/padmin/VIOS
+
+     - name: Commit the installed updates
+       updateios: action=commit
