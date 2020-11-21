@@ -5,27 +5,11 @@
   
   tasks:
    - name: Create file system for system updates
-     aix_filesystem: filesystem="/suma" size=50G state=present vg=nimvg
-      
-   - name: Mount the file system (if necessary)
-     aix_filesystem: filesystem="/suma" state=mounted 
+     aix_filesystem: filesystem=/suma size=50G state=present vg=nimvg
+   
+   - name: Creating NFS filesystem from nfshost.
+     aix_filesystem: device=/dev/fslv01 nfs_server=172.30.30.233 filesystem=/suma state=present   
     
-   - name: Check oslevel of system
-     shell: cmd="oslevel -s" when="ansible_distribution == 'AIX'" register=output
-     
-   #- name: Check, download and install to TL 7.2.3
-   #  suma:
-   #    action: download 
-   #    oslevel: Latest
-   #    download_dir: /suma
-       
-   #- name: Check, download and install to latest SP of TL 7.2.3
-   #  suma:
-   #    action: download
-   #    oslevel: '7200-03'
-   #    last_sp: yes
-   #    extend_fs: no
-   #  when: ansible_distribution == 'AIX'
-  
-   
-   
+   - name: export suma filesystem 
+     ibm.power_aix.filesystem: state=present device=/dev/fslv01 filesystem=/suma nfs_server=172.30.30.233
+
