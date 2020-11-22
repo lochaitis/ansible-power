@@ -3,6 +3,8 @@
   hosts: all
   gather_facts: no
   user: devops
+  collections:
+    - name: ibm.power_vios
 
   tasks:
      - name: Perform a cleanup of any existing alternate disk copy 
