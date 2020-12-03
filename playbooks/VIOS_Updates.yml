@@ -23,5 +23,4 @@
      - name: Update the VIOS to level 2.2.6.65, updates are mount on /home/devops/VIOS
        updateios: action=commit device=/home/devops/VIOS/VIOS_2.2.6.65 accept_licenses=true action=cleanup action=update
 
-     #- name: Commit the installed updates
-     #  updateios: action=commit
+    
