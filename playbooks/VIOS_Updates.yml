@@ -5,7 +5,8 @@
   user: devops
 
   tasks:
-     - name: Perform a cleanup of any existing alternate disk copy 
+
+     - name: Perform a cleanup of any existing alternate disk copy
        ibm.power_vios.alt_root_vg: action=clean
 
      - name: Perform an alternate disk copy of the rootvg to the smallest disk that can be selected
@@ -15,12 +16,7 @@
        file: path=/home/devops/VIOS state=directory mode='0755'
 
      - name: Mount filesystems provided by a node"
-       ibm.power_aix.mount: node=172.30.30.233 mount_dir=/suma mount_over_dir=/home/devops/VIOS 
-
-     #- name: Update the VIOS to level 2.2.6.61, updates are mount on /home/devops/VIOS
-     #  updateios: action=update device=/home/devops/VIOS/VIOS_2.2.6.61
+       ibm.power_aix.mount: node=172.30.30.233 mount_dir=/suma mount_over_dir=/home/devops/VIOS
 
      - name: Update the VIOS to level 2.2.6.65, updates are mount on /home/devops/VIOS
-       updateios: action=commit device=/home/devops/VIOS/VIOS_2.2.6.65 accept_licenses=true action=cleanup action=update
-
-    
+       updateios: action=update device=/home/devops/VIOS/VIOS_2.2.6.65
