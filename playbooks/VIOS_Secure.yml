@@ -1,0 +1,14 @@
+---
+- name: "VIOS Patch management"
+  hosts: all
+  gather_facts: no
+  user: devops
+
+  tasks:
+     #- name: Apply all of the low system security settings to the system
+     #  viosecure: level=low
+
+     - name: Load default firewall rules
+       viosecure: 
+         firewall: 
+           ipv4: active=yes default=yes

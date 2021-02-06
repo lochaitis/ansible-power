@@ -1,0 +1,13 @@
+- name: HMC update 
+  hosts: HMC 
+  collections:
+      - ibm.power_hmc
+  connection: local
+
+- name: List the HMC current build level
+  hmc_update_upgrade:
+      hmc_host: '{{ 172.30.30.202 }}'
+      hmc_auth:
+         username: '{{ hscroot }}'
+         password: '{{ P@ssw0rd }}'
+      state: facts

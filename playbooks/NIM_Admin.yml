@@ -1,0 +1,17 @@
+- name:  "SUMA on AIX"
+  hosts: all
+  gather_facts: NIM 
+  remote_user: devops
+  
+  tasks:
+   - name: Create file system for system updates
+     aix_filesystem: filesystem=/suma size=50G state=present vg=nimvg
+   
+   - name: Creating NFS filesystem from nfshost.
+     aix_filesystem: device=/dev/fslv01 nfs_server=172.30.30.233 filesystem=/suma state=present   
+    
+   - name: export suma filesystem 
+     ibm.power_aix.filesystem: state=present device=/dev/fslv01 filesystem=/suma nfs_server=172.30.30.233
+
+     
+  
